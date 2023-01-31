@@ -1,0 +1,195 @@
+==================================================================================================
+                                                OOPS Concepts
+==================================================================================================
+- We can compare it with real life and thing around us like computer, door, closet. All these are the objects.
+- An object consist of 2 things:
+    - State     -  properties of the object like computer has a cpu, monitor, ram etc.
+    - Behaviour - Actions performed by the object like computer is processing, printing etc.
+- Whereas a Class is a template for creating these objects
+- State in java would be variables.
+- Behaviour in Java would be methods which tells what to do.
+- As a general practise, when defining a variable in Java class we define it as Private.
+- A class can be accessed by creating its objects.
+- These objects can be used to access the behaviour or methods of the class.
+- A class or its variables(state), methods(behaviour) can be accessed based on there access modifier.
+- Every class has a default constructor.
+- Constructors:
+    - A constructor do not have a return type
+    - A constructor can be overloaded by passing parameters.
+    - One constructor can be called from another constructor. Using this keyword.
+    - A constructor name is same as class name.
+    - Default constructor is always called first.
+
+Below is constructor example:
+
+public class HelloWorld{
+String a = "";
+int b = 0;
+    public HelloWorld(){}                       //This is a Constructor
+
+    public HelloWorld(String a, int b)         //This is a Constructor Overloading
+    {
+        this.a = a;
+        this.b = b;
+    }
+
+}
+
+Understanding Classes and Objects concept with real world example of Building houses
+- Class is a blueprint or template, hence in our example it is a blueprint of a house.
+- Every house we build from this blueprint/class is like an instance of house blueprint.
+- Each of this house will be having a unique address.
+- This address can be shared but cannot be changed. Hence reference can be given.
+Example of instance creation:
+House blueHouse = new House("blue");
+    Where blueHouse is a variable and we are creating an instance on right side using new.
+- How to create multiple references to the same object:
+Step 1. Create an object as above.
+Step 2. Assign the object to another variable.
+    House anotherHouse = blueHouse;
+Hence if the value of one object is changed other will also be impacted, since they are sharing the same address or
+they both are referring to same address.
+==================================================================================================
+                                                Inheritance
+==================================================================================================
+Inheritance
+-----------
+- Defines IS A relationship
+- Car IS A Vehicle
+
+- In Inheritance child class/sub-class inherits features/behaviour from its parents class/super class.
+    - parameters
+    - methods
+
+- For instance, A Car class with features such as wheels, door, steering, lights can have a child car class Ford
+ that inherits these features and add new features like music system, leather seats..
+
+- To inherit a parent class we need use keyword extend.
+
+- super keyword is used in child class when it calls the constructor of parent class.
+
+[Note:
+1. Just to understand super keyword is acting in a similar way as this keyword.
+2. We use this keyword when we need to call another constructor within same class and use super keyword when we call
+constructor of a parent or super class. example of this keyword is in VipCustomer class.]
+
+- It is also a best practice to use super when using a method from parent class in inside inherited class.
+This helps, if we have or in future have a override(same name) method in child class it will be able to distinguish.
+
+==================================================================================================
+                                    Difference Between this & super
+==================================================================================================
+- Both these keyword can be used anywhere except for static areas i.e. static method or static block.
+- A constructor can have either super() or this() but not both.
+
+SUPER
+-----
+- 'super' is used call parent class member.
+- Commonly used for method overriding i.e. calling method from a parent class.
+- If there are 2 methods, one in child and another in parent class and we make a call inside a child class without
+super, it will always call child/same class method. Hence, to call a parent class method we need to use keyword super.
+- To call a parent constructor can be done using super()
+- By default compiler put call to parent without argument constructor using super().
+- super() constructor call must be first statement.
+
+THIS
+-----
+- 'this' is used call current class member.
+- Commonly used in differentiating the parameter passed and variable used in the class.
+- Commonly used in constructor and setters and optionally in getters. Since there could be a parameter with the same
+name as in the current class.
+- this() can be used in a constructor to call another overloaded constructor in the same class.
+- to do as in above statement this() [overloaded call should be the first call in the calling constructor.
+
+Abstract Classes
+================
+- Cannot be instantiated using new keyword.
+- Although Abstract class is still a super class, so its constructor run when someone makes instance of concrete
+subclass.
+
+==================================================================================================
+                                Method Overriding vs Method Overloading
+==================================================================================================
+Method Overloading
+------------------
+- It has different parameters and may or may not have same number of methods. Return type can also be
+same or different.
+- We can overload static and instance method.
+- It is in single class but also in sub-class.
+Rules of Method Overloading :-
+1. Same name but different parameters.
+2. May or may not have same return type, access modifiers, checked or unchecked exception.
+
+Method Overriding
+-----------------
+- Defining method with same signature(method name & parameters) in child class that already exists in parent class.
+- The return type must be same or covariant.
+[Covariant return typr - Overridden method may have a more specific return type.
+i.e, as long as the new return type is assignable to the return type of the method you are overriding]
+
+- Child class has all the parent methods and called as derived methods.
+- Method overriding is also called as runtime polymorphism.
+- recommended to put @override above method definition.
+- Static methods cannot be overridden, only instance method can be overridden.
+- Lower access modifiers are not allowed.
+EXAMPLE
+Parent has protected then child cannot use private but can use public.
+- Method can be overridden only in child class.
+- Constructor and private method and final method cannot be overridden.
+- Overridden method in subclass can call parent method using super.methodName()
+
+==================================================================================================
+                                        Static & Instance Methods
+==================================================================================================
+
+==================================================================================================
+                                        Static & Instance Variables
+==================================================================================================
+
+==================================================================================================
+                                        Object Class
+==================================================================================================
+- Any class is inherited from java.lang.object class.
+- java.lang.object class provides for following methods for overriding:
+        -Object()
+        -hashCode()
+        -equals()
+        -clone()
+        -toString()
+        -finalize()
+
+==================================================================================================
+                  Major OOPS Concepts - Composition, Encapsulation, Polymorphism
+==================================================================================================
+Composition
+-----------
+- Defines HAS A relationship.
+- Example: A computer HAS A Motherboard, monitor, keyboard and a mouse.
+- Incase of Composition unlike inheritance we do not extend classes to access there methods, instead we create there
+objects or getter method and access it.
+
+Encapsulation
+-------------
+- It hides the inner working of class from outside classes or code. Hence, providing following features:
+
+    1. Protects the data to be altered from outside the class. For instance some variable values should not be allowed
+    to be modified from outside as that could impact inner working of the class.
+
+    2. Reduces the refactoring effort. If a variable accessed outside the class and later developer decides to change
+    Variable name then it could impact or cause error.
+
+    3. Developer could forget to setup variable values if allowed to be accessed outside the class. By encapsulating
+    we limit the initialization of such variables or enforce it using constructors or instead of variables access we
+    can allow method access and implementing validations in that method to control/validate the access.
+
+    4. We can enforce proper data setup by adding validations and constructors(to make sure required data is setup).
+
+Polymorphism
+------------
+- Polymorphism mean Many Behaviour.
+
+
+
+
+
+

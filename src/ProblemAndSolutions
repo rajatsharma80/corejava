@@ -1,0 +1,16 @@
+Problem 1: - Problem while taking user inputs.
+When user enters an integers first and then tries to enter String, control exits without taking String input.
+Reason: When user enters numbers in the integer variable and press enter, \n is stored in the buffer. Which String
+variable reads and considers it is exited.
+Solution:
+write another line scanner.nextLine() before
+           taking the next input otherwise control will exit without taking the next input..
+
+Problem 2: When a double value is printed with a long length of decimal.
+Solution: This can be handled by formatting the double number. First convert it to a string and then format it as below:
+
+         String.format("%.2f", 20.000001) This will format 20.000001 to 20.00.
+
+Problem 3: One cannot predict user input, say a variable is expecting integer and user is entering string, It will
+through numberFormat exception.
+Solution:  Use scanner.hasNextInt()

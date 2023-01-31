@@ -1,0 +1,2 @@
+sout -> System.out.println()
+psvm -> public static void main()

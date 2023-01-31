@@ -1,0 +1,67 @@
+==================================================================================================
+                                                Collections
+==================================================================================================
+==================================================================================================
+                                                    Arrays
+==================================================================================================
+- Array hold a sequence of values of the same datatype(like int, float etc.)
+- Declaring Array
+            int[] myArray;
+- Initializing Array
+            myArray = new int[5]
+    Where, 5 is the number of elements we want to store in the array.
+- The above declaration and initialization can be combined like this:
+            int[] myArray = new int[5];
+- In order to store elements in Array, we do following:
+            myArray[4] = 15
+  15 will be stored at index number 5, although we mention 4, reason for that is, array index starts from 0
+- To retrieve a value from Array
+            myArray[4]
+- We can define, initialize and assign values to the array all at the same time, as below:
+            int[] myArray = {1,2,3,4,5}
+- Another way to initialize and assign is using for() loop.
+
+- How to pass and return Array from one method to another method, below is an example:
+
+                callingMethod(){
+                    passArrayValue(myArray);
+                }
+
+                public int[] passArrayValue(int[] myArray)
+                {
+                    return myArray;
+                }
+==================================================================================================
+                                            List/Arraylist
+==================================================================================================
+- List is collection of items.
+- ArrayList inherits from list. It's a resizable array i.e. handles the resizing automatically.
+- ArrayList holds objects instead of primitive datatypes.
+- Creating an ArrayList.
+        private ArrayList<String> arrayListObject = new ArrayList<String>();
+- The index in ArrayList starts from 0 similar to Array. Hence in order to print a position for an item.
+        index+1
+- Adding Items to ArrayList.
+        arrayListObject.add();
+- Checking the size of ArrayList.
+        arrayListObject.size();
+- Reading from ArrayList.
+        arrayListObject.get(index);
+- Replace/modify an item in ArrayList.
+        arrayListObject.set(index, String newItem);
+- Removing Items from ArrayList.
+        arrayListObject.remove(index)
+[Note: If we remove any item from ArrayList, it will automatically adjust the existing elements to new position.]
+- Find an element in ArrayList.
+        boolean isExist = arrayListObject.contains(searchItem);
+[Note: Ideally we should use this instead of iterating the loop as this function is written & optimized by Java experts.
+- In order to return the item if it exists in the ArrayList, we could use below code:
+        int position = arrayListObject.indexOf(searchItem);
+    indexOf will return the position of the item which we are searching.
+    Also if the item does not exists in the ArrayList, from the above code it will return -1.
+    Now after getting the position we can write following code to reterive the item:
+        if(position >= 0){
+            return arrayListObject.get(position);
+        }else{
+            return null;
+        }

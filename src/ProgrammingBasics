@@ -1,0 +1,196 @@
+========================================================================================================
+                    Primitive Types
+========================================================================================================
+There are 8 Primitive Data Types:
+1. byte
+2. short
+3. int
+4. long
+5. float
+6. double
+7. char
+8. boolean
+========================================================================================================
+====================About Char==========================================================================
+- Char can only store single character.
+- Char occupies 2 bytes/16 bits/16 width.
+- Reason why Char is not single byte because it allows to store unicode characters.
+- Unicode is an international encoding standard for use with different languages. Where each letter, digit or symbol
+    is assigned a unique number.
+- English has 26 alphabets hence 26 numerics are used by english but other languages have more words and rest of the
+   unicode is used by them.
+- Unicode range is 65535
+- https://unicode-table.com/en/ -> Site having unicode table
+- Use '\u' to declare a unicode value e.g. char unicodeVar = '\u0040'
+========================================================================================================
+====================About Boolean========================================================================
+- Boolean can have either True or False/ Yes or No/ 1 or 0
+====================================================
+
+========================================================================================================
+                        String Data Type (Not Primitive Data Type)
+========================================================================================================
+- Its a class.
+- String is a sequence of characters.
+- It is limited by the memory in the computer.
+- A String can comprise of characters or strings or even unicodes.
+- String in Java are immutable. Cannot remove a character from a string after it is created, instead when we do so a
+    new string is created. Hence cannot change a string after it is created.
+====================================================
+
+========================================================================================================
+                                            Operator & Expressions
+========================================================================================================
+- Operators are special symbols to perform special operation on 1 or 2 or more operands.
+- Operators are + - * / =
+- Arithmetic operator + - * / %
+- Assignment operator =
+- Example: int total = 10 + 20; //Here 10 and 20 are operands and + is the operator.
+- Expression is formed by operands and operators and return type, above 10 + 20 is expression which has 30 return type,
+datatype is not part of expression. In above example int is not part of expression.
+- Abbreviating Operators, assuming i value is 10:
+                            i++         //11
+                            i--         //9
+                            i += 2      //i = 10 + 2
+                            i *=4       // i = 10 * 4
+- Comparative Operator like ==
+- Logical AND operator && it combines 2 conditions.
+Example: if( (firstNumber < secondNumber) && (secondNumber > thirdNumber) )
+- Logical OR operator || it combines 2 conditions.
+Example: if( (firstNumber < secondNumber) || (secondNumber > thirdNumber) )
+
+- IF condition, statement given in if condition should return boolean value. Eg.
+int isItemValue = 50;
+if(isItemValue == 50)
+    system.out.println("item value is true")
+else
+    system.out.println("item value is false")
+
+Answer: //This will print "item value is true"
+
+- NOT or ! operator is also know as the logical complement operator
+Example: if(!isItem){}
+
+- Ternary Operator, is assigning one of the 2 values to a variable depending on the condition
+Example: boolean isItemValue = true;
+boolean itemVal = isItemValue ? true : false;
+
+========================================================================================================
+                                            Keywords & Expressions
+========================================================================================================
+- Keywords in Java are the reserved words by Java.
+- There are 50 reserved words in Java.
+- List of Keywords - https://en.wikipedia.org/wiki/List_of_Java_keywords
+
+========================================================================================================
+                                            If Else & Code Block
+========================================================================================================
+if(Condition) { } --> if the condition defined in if condition criteria is true, then statement in if block is executed.
+if(Condition) { } else { } --> if the condition defined in if condition criteria is true,
+                               then statement in if block is executed. else statement defined in else will be executed.
+
+========================================================================================================
+                                            Methods in Java
+========================================================================================================
+- Method helps to reduce duplication of the code hence improves the reusability and reduce lines of code.
+- Methods can be more effectively be used by passing value in it.
+- Values can be passed to a Method, method processes it and may return answer to calling method.
+- Return value is defined in the method declaration, before the method name.
+- Below are the examples of Method:
+
+Method with no return value:
+
+    void callMeMethod(){
+        System.out.println("This is a method");
+    }
+
+Method with return value:
+
+    int callMeMethod(){
+        int a = 10;
+        return a;
+    }
+
+========================================================================================================
+                                            Methods Overloading
+========================================================================================================
+- In Method overload use the same method name but with different parameters, allowing different implementations.
+- It is good practice to use Method overloading when similar operation with different arguments needs to be performed.
+
+========================================================================================================
+                              Control Flow Statements - Switch, For, While & do While
+========================================================================================================
+- Switch statement is useful when using one condition over multiple condition like in if()
+- based on the condition respective case statement is executed.
+- Syntax of Switch statement:
+
+                switch(conditionValue){
+                    case 1:
+                        <<statement to be exe.>>
+                        break;
+                    case 2:
+                        <<statement to be exe.>>
+                        break;
+                    ...
+                    ... and so on...
+                    default:
+                        <<statement to be exe.>>
+                        break;
+                }
+
+   Where conditionValue is the value based on which the case statement will be exe.
+   case 1, case 2.... are different statement, one of which will be exe.
+   default statement will be exe. incase non of the case is satisfied.
+
+========================================================================================================
+                                            For Loop
+========================================================================================================
+- Allows to loop through statements multiple times based on the counter.
+- There are 3 parts of for loop:
+        1. initialization or starting point of the loop
+        2. Limit or End point of the loop.
+        3. Increment of the loop.
+- Below is the syntax of the for loop:
+    for(int i=0; i<limit; i++){
+
+    }
+
+========================================================================================================
+                                            While Loop
+========================================================================================================
+- Based on the condition in While the loop i.e. until it is true, statements are executed.
+- Whereas do while will execute atleast once, even if the condition is not met. The condition is validated at the end
+of the loop incase of do while loop.
+
+========================================================================================================
+                                            Difference Between Break & Continue
+========================================================================================================
+- break will break the loop.
+- continue will continue the loop but will skip any statements after it. Meaning, if a there is a while loop with 10
+lines of code and continue keyword is on line number 5 then it will skip lines 6 through 10 and continue the loop.
+
+========================================================================================================
+                                            Parsing value from a String
+========================================================================================================
+- To parse/convert String to an integer:
+        Integer.parseInt(<<string>>)
+   Where Integer is wrapper class and parseInt is a method in it to convert String to an integer.
+- If we add a number to a String then it will concatenate it to the string like:
+    String a = "2023" + 1;
+  Will result in 20231
+- Where if we typecast the string to integer and then add it, it will sum it up like:
+    Integer.parseInt(a) + 2023
+  will result in 2024
+- If we try to typecast an actual string to integer it will through a NumberFormat error like "2023a"
+
+========================================================================================================
+                                            Reading User Input
+========================================================================================================
+- next -
+- Scanner - This is used to take input from the user. Example:
+Scanner scanner = new Scanner(System.in);
+- After using scanner we should always close it.
+- To read a text from user use: scanner.nextInt()
+- To read a number from user use scanner.nextLine() and similarly float, double boolean.
+- One important point, whenever reading a number like int, float etc. write another line scanner.nextLine() before
+taking the next input otherwise control will exit without taking the next input..

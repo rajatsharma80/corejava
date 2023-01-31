@@ -1,0 +1,22 @@
+- Double is recommended over float as computer processes double faster than float.
+ Secondly, there are certain MATH libraries that uses Double.
+- Even when if(){ } block is having 1 statement, use the { } as it makes the code clean and less error prone
+- Return -1 for calculations where we want to return value not found or error.
+- It is good practice to use Method overloading when similar operation with different arguments needs to be performed.
+- Method overloading helps in readability, consistency in naming i.e. one name for method commonly used.
+Example: System.out.println()
+
+- As a general practise, when defining a variable in Java class we define it as Private.
+- It is a best practice to setup constructor(default values) values using this keyword instead of setter method.
+Example:
+
+public class Bank{
+String a;
+int b;
+    public Bank(){}
+
+    public class Bank(String a, int b){
+        this.a = a;     //instead of using setA("")
+        this.b = b;     //instead of using setB(0)
+    }
+}
